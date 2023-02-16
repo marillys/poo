@@ -1,4 +1,4 @@
-package aulas.aula6;
+package aulas.controle;
 
 public interface Controlador {
     public abstract void ligar();

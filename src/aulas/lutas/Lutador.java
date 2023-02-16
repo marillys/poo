@@ -1,4 +1,4 @@
-package aulas.aula7;
+package aulas.lutas;
 
 public class Lutador {
     private String nome;
