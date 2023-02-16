@@ -3,8 +3,11 @@ import aulas.aula2.Monitor;
 import aulas.aula4.CanetaAula4;
 import aulas.conta.Conta;
 import aulas.controle.ControleRemoto;
+import aulas.livraria.Livro;
+import aulas.livraria.Pessoa;
 import aulas.lutas.Luta;
 import aulas.lutas.Lutador;
+import aulas.pessoas.*;
 
 import java.util.Scanner;
 
@@ -46,6 +49,18 @@ public class Principal {
 
             case 8:
                 aula8();
+                break;
+
+            case 9:
+                aula9();
+                break;
+
+            case 10:
+                aula10();
+                break;
+
+            case 11:
+                aula11();
                 break;
 
             default:
@@ -146,7 +161,7 @@ public class Principal {
 
         lutador = aula7();
 
-        luta.marcarLuta(lutador[5],lutador[4]);
+        luta.marcarLuta(lutador[5], lutador[4]);
         luta.lutar();
         lutador[5].status();
         lutador[4].status();
@@ -156,5 +171,65 @@ public class Principal {
 
         luta.marcarLuta(lutador[0], lutador[5]);
         luta.lutar();
+    }
+
+    public static void aula9() {
+        Pessoa[] pessoa = new Pessoa[2];
+        Livro[] livro = new Livro[3];
+
+        pessoa[0] = new Pessoa("Pedro", 10, "M");
+        pessoa[1] = new Pessoa("Maria", 15, "F");
+
+        livro[0] = new Livro("Aprendendo Java", "José da Silva", 300, pessoa[0]);
+        livro[1] = new Livro("POO para iniciantes", "Pedro Paulo", 500, pessoa[1]);
+        livro[2] = new Livro("Java Avançado", "Maria Candido", 800, pessoa[0]);
+
+        System.out.println(livro[0].detalhes());
+        livro[0].abrir();
+        livro[0].folhear(1000);
+        System.out.println(livro[0].detalhes());
+    }
+
+    public static void aula10() {
+        Pessoa pessoa = new Pessoa();
+        Aluno aluno = new Aluno();
+        Professor professor = new Professor();
+        Funcionario funcionario = new Funcionario();
+
+        pessoa.setNome("Pedro");
+        aluno.setNome("Maria");
+        professor.setNome("Cláudio");
+        funcionario.setNome("Fabiana");
+
+        aluno.setCurso("Informática");
+        professor.setSalario(2500.45f);
+        funcionario.setSetor("Estoque");
+
+        System.out.println(pessoa.toString());
+        System.out.println(aluno.toString());
+        System.out.println(professor.toString());
+        System.out.println(funcionario.toString());
+    }
+
+    public static void aula11(){
+        Visitante visitante = new Visitante();
+
+        visitante.setNome("Vinicius");
+        visitante.setIdade(26);
+        visitante.setSexo("M");
+        System.out.println(visitante.toString());
+
+        Aluno aluno = new Aluno();
+        aluno.setNome("Claúdia");
+        aluno.setCurso("Informática");
+        aluno.setSexo("F");
+        aluno.pagarMensalidade();
+
+        Bolsista alunoBolsista = new Bolsista();
+        alunoBolsista.setNome("Ana");
+        alunoBolsista.setCurso("Administração");
+        alunoBolsista.setBolsa(450f);
+        alunoBolsista.setSexo("F");
+        alunoBolsista.pagarMensalidade();
     }
 }
