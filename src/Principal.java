@@ -9,6 +9,9 @@ import aulas.livraria.Pessoa;
 import aulas.lutas.Luta;
 import aulas.lutas.Lutador;
 import aulas.pessoas.*;
+import aulas.video.Gafanhoto;
+import aulas.video.Video;
+import aulas.video.Visualizacao;
 
 import java.util.Scanner;
 
@@ -75,7 +78,8 @@ public class Principal {
                 break;
 
             default:
-                System.out.println("Não tem exercícios para esta aula...");
+                System.out.println("Exercício final completo");
+                aula14();
                 break;
         }
     }
@@ -276,7 +280,38 @@ public class Principal {
 
         cachorro.reagir("Olá");
         cachorro.reagir("Vai apanhar");
-        cachorro.reagir(11,45);
-        cachorro.reagir(2,4.5f);
+        cachorro.reagir(11, 45);
+        cachorro.reagir(2, 4.5f);
+    }
+
+    public static void aula14() {
+        Video videos[] = new Video[3];
+
+        videos[0] = new Video("Como ser grande ");
+        videos[1] = new Video("aula 5 de Java");
+        videos[2] = new Video("Como fazer crochê");
+
+        System.out.println(videos[1].toString());
+
+        Gafanhoto aluno[] = new Gafanhoto[2];
+        aluno[0] = new Gafanhoto("Ana", 15, "Feminino", "aninha");
+        aluno[1] = new Gafanhoto("Eleonor", 10, "Feminino", "eleonor");
+
+        aluno[1].viuMaisUM();
+
+        System.out.println(aluno[1].toString());
+
+        Visualizacao assistir[] = new Visualizacao[2];
+        assistir[0] = new Visualizacao(aluno[1], videos[0]);
+        assistir[1] = new Visualizacao(aluno[0], videos[0]);
+
+        assistir[0].avaliar(50f);
+        System.out.println(assistir[0].toString());
+
+        assistir[0].avaliar(80f);
+        System.out.println(assistir[0].toString());
+
+        assistir[0].avaliar(100f);
+        System.out.println(assistir[0].toString());
     }
 }
