@@ -1,3 +1,4 @@
+import aulas.animal.*;
 import aulas.aula2.Caneta;
 import aulas.aula2.Monitor;
 import aulas.aula4.CanetaAula4;
@@ -61,6 +62,10 @@ public class Principal {
 
             case 11:
                 aula11();
+                break;
+
+            case 12:
+                aula12();
                 break;
 
             default:
@@ -211,7 +216,7 @@ public class Principal {
         System.out.println(funcionario.toString());
     }
 
-    public static void aula11(){
+    public static void aula11() {
         Visitante visitante = new Visitante();
 
         visitante.setNome("Vinicius");
@@ -231,5 +236,33 @@ public class Principal {
         alunoBolsista.setBolsa(450f);
         alunoBolsista.setSexo("F");
         alunoBolsista.pagarMensalidade();
+    }
+
+    public static void aula12() {
+        Mamifero mamifero = new Mamifero();
+        Reptil reptil = new Reptil();
+        Peixe peixe = new Peixe();
+        Ave ave = new Ave();
+        Canguru canguru = new Canguru();
+        Cachorro cachorro = new Cachorro();
+        Cobra cobra = new Cobra();
+        Tartaruga tartaruga = new Tartaruga();
+        GoldFish goldFish = new GoldFish();
+        Arara arara = new Arara();
+
+        ave.locomover();
+
+        peixe.locomover();
+
+        reptil.locomover();
+
+        mamifero.locomover();
+
+        canguru.locomover();
+
+        cachorro.emitirSom();
+
+        cobra.locomover();
+
     }
 }
