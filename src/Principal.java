@@ -16,7 +16,7 @@ public class Principal {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
 
-        System.out.println("Escolha uma aula (2 a 10)");
+        System.out.println("Escolha uma aula (2 a 13)");
         int opcaoEscolha = Integer.parseInt(teclado.nextLine());
 
         switch (opcaoEscolha) {
@@ -65,7 +65,13 @@ public class Principal {
                 break;
 
             case 12:
+                //polimorfismo de sobreposição
                 aula12();
+                break;
+
+            case 13:
+                //polimorfismo de sobrecarga
+                aula13();
                 break;
 
             default:
@@ -263,6 +269,14 @@ public class Principal {
         cachorro.emitirSom();
 
         cobra.locomover();
+    }
 
+    public static void aula13() {
+        Cachorro cachorro = new Cachorro();
+
+        cachorro.reagir("Olá");
+        cachorro.reagir("Vai apanhar");
+        cachorro.reagir(11,45);
+        cachorro.reagir(2,4.5f);
     }
 }
